@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="./portfolio.js"></script>
+  </head>
+  <body>
+    <header class="flex justify-around w-full fixed bg-white p-5">
+      <!-- Logo here -->
+
+      <a href="#"
+        ><h1>Logo</h1>
+        <img src="" alt=""
+      /></a>
+
+      <!-- Navigation links here -->
+
+      <nav>
+        <ul class="flex gap-x-[30px]">
+          <li>
+            <a href="/about"></a
+            ><i class="fa fa-user" aria-hidden="true"></i> About
+          </li>
+          <li><a href="/project"></a>Projects</li>
+          <li>
+            <a href="/skills"></a
+            ><i class="fa fa-cogs" aria-hidden="true"></i> Skills
+          </li>
+          <li>
+            <a href="/contacts"></a
+            ><i class="fa fa-phone" aria-hidden="true"></i> Contact
+          </li>
+          <li><a href="/experiences"></a>Experiences</li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="flex justify-around items-center h-screen">
+      <div>
+        <!-- Text goes here -->
+        <p class="text-[#7E5C1A] mb-3">Web Developer</p>
+        <h1 class="text-2xl font-bold">
+          <span class="block">Hello, My name</span> is Bernard Adjetey
+        </h1>
+        <p class="flex flex-col gap-[10px] block">
+          <span class="mt-4"
+            >Web developer with a strong foundation in application
+          </span>
+          <span>security. Committed to learning and contributing to the </span>
+          <span>
+            creation of robust and secure web applications. Possesses</span
+          >
+          <span
+            >excellent problem-solving skills and a dedication to
+            enhancing</span
+          >
+          <span>online safety through secure coding practices.</span>
+        </p>
+
+        <div class="flex gap-y-[20px] mt-5">
+          <button class="p-[10px_25px] rounded-[10px] bg-[#FDC435]">
+            <i class="fa fa-download" aria-hidden="true"></i>
+            Download CV
+          </button>
+        </div>
+      </div>
+      <div>
+        <!-- Image goes here -->
+        <img
+          class="w-[350px] h-[350px] rounded-full"
+          src="./images/photograph.jpg"
+          alt=""
+        />
+      </div>
+    </section>
+
+    <section class="flex justify-around items-center h-screen p-40">
+      <div class="w-[50%]">
+        <!-- Text goes here -->
+        <h3 class="text-2xl font-bold">Project Name1</h3>
+        <p flex flex-col gap-[10px]>
+          <span class="block mt-4"
+            >I created this personal project in order to show</span
+          >
+          how to create an interface in Figma using a portfolio as an example.
+        </p>
+
+        <!-- Button goes here -->
+        <div>
+          <button
+            class="p-[10px_25px] rounded-[10px] bg-[#FDC435] flex gap-y-[20px] mt-5"
+          >
+            <i class="fa fa-eye" aria-hidden="true"></i> View Project
+          </button>
+        </div>
+      </div>
+
+      <!-- Image goes here -->
+      <div class="w-[50%] ring-2 ring-blue-500">
+        <img src="./images/project-1.png" alt="" />
+      </div>
+    </section>
+  </body>
+</html>
