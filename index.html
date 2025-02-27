@@ -11,8 +11,10 @@
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <script src="./portfolio.js"></script>
   </head>
-  <body>
-    <header class="flex justify-around w-full fixed bg-white p-5">
+  <body class="m-0 p-0">
+    <header
+      class="flex justify-around w-full fixed bg-[#4A5565] text-white p-5"
+    >
       <!-- Logo here -->
 
       <a href="#"
@@ -28,7 +30,7 @@
             <a href="/about"></a
             ><i class="fa fa-user" aria-hidden="true"></i> About
           </li>
-          <li><a href="/project"></a>Projects</li>
+          <li><a href="/project"></a> Projects</li>
           <li>
             <a href="/skills"></a
             ><i class="fa fa-cogs" aria-hidden="true"></i> Skills
@@ -65,7 +67,9 @@
         </p>
 
         <div class="flex gap-y-[20px] mt-5">
-          <button class="p-[10px_25px] rounded-[10px] bg-[#FDC435]">
+          <button
+            class="p-[10px_25px] rounded-[10px] bg-[#FDC435] hover:bg-yellow-400 cursor-pointer"
+          >
             <i class="fa fa-download" aria-hidden="true"></i>
             Download CV
           </button>
@@ -80,22 +84,24 @@
         />
       </div>
     </section>
+    <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center">PROJECTS</h2>
 
-    <section class="flex justify-around items-center h-screen p-40">
-      <div class="w-[50%]">
+    <!-- Project 1 -->
+    <section class="flex justify-between items-center mt-10 pl-35 pr-0.03">
+      <div class="">
         <!-- Text goes here -->
-        <h3 class="text-2xl font-bold">Project Name1</h3>
+        <h3 class="text-2xl font-bold">To-do App</h3>
         <p flex flex-col gap-[10px]>
           <span class="block mt-4"
-            >I created this personal project in order to show</span
+            >This project allows users to add, delete, and manage tasks,</span
           >
-          how to create an interface in Figma using a portfolio as an example.
+          promoting better organization and productivity.
         </p>
 
         <!-- Button goes here -->
         <div>
           <button
-            class="p-[10px_25px] rounded-[10px] bg-[#FDC435] flex gap-y-[20px] mt-5"
+            class="p-[10px_25px] rounded-[10px] bg-[#FDC435] flex items-center justify-center gap-x-2 mt-5"
           >
             <i class="fa fa-eye" aria-hidden="true"></i> View Project
           </button>
@@ -103,8 +109,118 @@
       </div>
 
       <!-- Image goes here -->
-      <div class="w-[50%] ring-2 ring-blue-500">
-        <img src="./images/project-1.png" alt="" />
+      <div>
+        <img src="./images/project-1-update.png" alt="123" />
+      </div>
+    </section>
+
+    <!-- Project 2 -->
+    <!-- Image goes here -->
+    <section class="flex justify-between items-center mt-10 pl-35 pr-43">
+      <div>
+        <img src="./images/project-2-update.png" alt="" />
+      </div>
+      <div>
+        <!-- Text goes here -->
+        <h3 class="text-2xl font-bold">Drink Shop</h3>
+        <p flex flex-col gap-[10px]>
+          <span class="block mt-4"
+            >This project allows users to browse, order, and</span
+          >
+          manage their favorite beverages
+        </p>
+
+        <!-- Button goes here -->
+        <div>
+          <button
+            class="p-[10px_25px] rounded-[10px] bg-[#FDC435] flex items-center justify-center gap-x-2 mt-5"
+          >
+            <i class="fa fa-eye" aria-hidden="true"></i> View Project
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project 3 -->
+    <section class="flex justify-between items-center mt-10 pl-35 pr-43">
+      <div>
+        <!-- Text goes here -->
+        <h3 class="text-2xl font-bold">Inspire Daily News</h3>
+        <p flex flex-col gap-[10px]>
+          <span class="block mt-4">This project showcases the latest news</span>
+          and blog updates.
+        </p>
+
+        <!-- Button goes here -->
+        <div>
+          <button
+            class="p-[10px_25px] rounded-[10px] bg-[#FDC435] flex items-center justify-center gap-x-2 mt-5"
+          >
+            <i class="fa fa-eye" aria-hidden="true"></i> View Project
+          </button>
+        </div>
+      </div>
+
+      <!-- Image goes here -->
+      <div><img src="./images/project-3.png" /></div>
+    </section>
+
+    <!-- Contact goes here -->
+    <h1 class="text-4xl md:text-5xl font-bold text-center">Get in Touch</h1>
+    <section class="flex items-center justify-center mt-3">
+      <div class="w-full max-w-lg">
+        <form onsubmit="event.preventDefault(); alert('Message sent!')">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none mb-4"
+            required
+          />
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 w-full">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter email address"
+              class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+              required
+            />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Enter phone number"
+              class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+              required
+            />
+          </div>
+
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Enter subject"
+            class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none mb-4"
+            required
+          />
+
+          <textarea
+            placeholder="Message"
+            rows="4"
+            class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none resize-none mb-4"
+            required
+          ></textarea>
+
+          <button
+            type="submit"
+            class="w-full bg-blue-600 text-white font-medium p-3 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition"
+          >
+            Send Message
+          </button>
+        </form>
       </div>
     </section>
   </body>
