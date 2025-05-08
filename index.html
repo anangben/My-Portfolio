@@ -15,7 +15,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <script src="./portfolio.js"></script>
+    <script src="./portfolio.js" defer></script>
   </head>
   <body class="m-0 p-0">
     <header
@@ -23,14 +23,34 @@
     >
       <!-- Logo here -->
 
-      <a href="#"
+      <a href="#" class="flex items-center space-x-2"
         ><h1>BEN</h1>
         <img src="" alt=""
       /></a>
 
+      <!-- Hamburger Menu Button (visible on small screens) -->
+      <div class="md:hidden">
+        <button id="menu-button" class="text-white focus:outline-none">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
       <!-- Navigation links here -->
 
-      <nav>
+      <nav class="hidden md:flex space-x-4">
         <ul class="flex gap-x-[30px]">
           <li>
             <a href="#about"
@@ -38,7 +58,13 @@
             >
           </li>
 
-          <li><a href="#project">Projects</a></li>
+          <li>
+            <a href="#project"
+              ><i class="fa fa-folder-open" aria-hidden="true"></i
+              >&nbsp;Projects</a
+            >
+          </li>
+
           <li>
             <a href="#skills"
               ><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;Skills</a
@@ -52,19 +78,47 @@
           </li>
         </ul>
       </nav>
+
+      <!-- Mobile Menu (hidden by default) -->
+      <div id="mobile-menu" class="hidden md:hidden">
+        <ul class="flex flex-col space-y-2 p-4">
+          <li>
+            <a href="#about" class="flex items-center">
+              <i class="fa fa-user" aria-hidden="true"></i>&nbsp;About
+            </a>
+          </li>
+          <li>
+            <a href="#project"
+              ><i class="fa fa-folder-open" aria-hidden="true"></i
+              >&nbsp;Projects</a
+            >
+          </li>
+          <li>
+            <a href="#skills" class="flex items-center">
+              <i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;Skills
+            </a>
+          </li>
+          <li>
+            <a href="#contact"
+              ><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;Contact</a
+            >
+          </li>
+        </ul>
+      </div>
     </header>
 
-    <section id="about" class="flex justify-around items-center h-screen">
-      <div>
+    <section
+      id="about"
+      class="flex flex-col justify-around items-center h-screen pt-20 md:pt-24 p-4 md:p-8 md:flex-row"
+    >
+      <div class="text-center md:text-left">
         <!-- Text goes here -->
-        <p class="text-[#7E5C1A] mb-3">Web Developer</p>
+        <p class="text-[#4A5565] mb-3">Web Developer</p>
         <h1 class="text-2xl font-bold">
-          <span class="block">Hello, My name</span> is Bernard Adjetey
+          <span class="block">Hello, My name</span> is Bernard
         </h1>
-        <p class="flex flex-col gap-[10px] block">
-          <span class="mt-4"
-            >Web developer with a strong foundation in application
-          </span>
+        <p class="flex flex-col gap-[10px] mt-4 text-base md:text-lg">
+          <span>Web developer with a strong foundation in application </span>
           <span>security. Committed to learning and contributing to the </span>
           <span>
             creation of robust and secure web applications. Possesses</span
@@ -76,11 +130,11 @@
           <span>online safety through secure coding practices.</span>
         </p>
 
-        <div class="flex gap-y-[20px] mt-5">
+        <div class="flex gap-y-[20px] mt-5 md:justify-start">
           <a
             href="https://drive.google.com/file/d/18taMdUX2XhlMI8Y3v4Q_CkeqrstmlvuA/view?usp=sharing"
             download
-            class="p-[10px_25px] rounded-[10px] bg-[#FDC435] hover:bg-yellow-400 cursor-pointer inline-flex items-center"
+            class="flex items-center justify-center gap-x-2 w-full text-black p-3 rounded-lg bg-[#4A5565] text-white hover:bg-[#2D3748] cursor-pointer mb-10"
           >
             <i class="fa fa-download" aria-hidden="true"></i>
             &nbsp;Download CV
@@ -90,101 +144,117 @@
       <div>
         <!-- Image goes here -->
         <img
-          class="w-[350px] h-[350px] rounded-full"
+          class="w-[350px] h-[350px] rounded-full md:w-72 md:h-72 mx-auto md:mx-0"
           src="./images/photograph.jpg"
           alt=""
         />
       </div>
     </section>
-    <h2 id="project" class="text-4xl md:text-5xl font-bold text-center pt-5">
+
+    <h2
+      id="project"
+      class="text-4xl mt-40 md:text-5xl font-bold text-center pt-12 pb-10"
+    >
       PROJECTS
     </h2>
 
     <!-- Project 1 -->
-    <section class="flex justify-between items-center mt-10 pl-35 pr-0.03">
-      <div class="">
-        <!-- Text goes here -->
+    <section
+      class="flex flex-col md:flex-row justify-between items-center mt-10 p-4 md:p-8 max-w-6xl mx-auto space-y-8 md:space-y-0 md:space-x-8"
+    >
+      <!-- Text Div -->
+      <div class="w-full md:w-1/2 text-center md:text-left">
         <h3 class="text-2xl font-bold">To-do App</h3>
-        <p flex flex-col gap-[10px]>
-          <span class="block mt-4"
-            >This project allows users to add, delete, and manage tasks,</span
-          >
-          promoting better organization and productivity.
+        <p class="mt-4">
+          This project allows users to add, delete, and manage tasks promoting
+          better organization and productivity.
         </p>
-
-        <!-- Button goes here -->
-        <a href="https://bernard-adjetey-todoapp.netlify.app/">
+        <a
+          href="https://bernard-adjetey-todoapp.netlify.app/"
+          class="inline-block mt-5"
+        >
           <button
-            class="p-[10px_25px] rounded-[10px] bg-[#FDC435] flex items-center justify-center gap-x-2 mt-5 hover:bg-yellow-400 cursor-pointer"
+            class="flex items-center justify-center gap-x-2 w-full text-black p-3 rounded-lg bg-[#4A5565] text-white hover:bg-[#2D3748] cursor-pointer"
           >
             <i class="fa fa-eye" aria-hidden="true"></i> View Project
           </button>
         </a>
       </div>
-
-      <!-- Image goes here -->
-      <div>
-        <img src="./images/project-1-update.png" alt="123" />
+      <!-- Image Div -->
+      <div class="w-full md:w-1/2 flex justify-center">
+        <img
+          class="w-full max-w-xs md:max-w-full rounded-lg"
+          src="./images/project-1-update.png"
+          alt="To-do App"
+        />
       </div>
     </section>
 
     <!-- Project 2 -->
-    <!-- Image goes here -->
-    <section class="flex justify-between items-center mt-10 pl-35 pr-43">
-      <div>
-        <img src="./images/project-2-update.png" alt="" />
+    <section
+      class="flex flex-col md:flex-row justify-between items-center mt-10 p-4 md:p-8 max-w-6xl mx-auto space-y-8 md:space-y-0 md:space-x-8"
+    >
+      <!-- Image Div -->
+      <div class="w-full md:w-1/2 flex justify-center">
+        <img
+          class="w-full max-w-xs md:max-w-full rounded-lg"
+          src="./images/project-2-update.png"
+          alt="Drink Shop"
+        />
       </div>
-      <div>
-        <!-- Text goes here -->
+      <!-- Text Div -->
+      <div class="w-full md:w-1/2 text-center md:text-left">
         <h3 class="text-2xl font-bold">Drink Shop</h3>
-        <p flex flex-col gap-[10px]>
-          <span class="block mt-4"
-            >This project allows users to browse, order, and</span
-          >
-          manage their favorite beverages
+        <p class="mt-4">
+          This project allows users to browse, order, and manage their favorite
+          beverages.
         </p>
-
-        <!-- Button goes here -->
-        <div>
-          <a href="https://bernard-adjetey-drink-shop.netlify.app/">
-            <button
-              class="p-[10px_25px] rounded-[10px] bg-[#FDC435] flex items-center justify-center gap-x-2 mt-5 hover:bg-yellow-400 cursor-pointer"
-            >
-              <i class="fa fa-eye" aria-hidden="true"></i> View Project
-            </button>
-          </a>
-        </div>
+        <a
+          href="https://bernard-adjetey-drink-shop.netlify.app"
+          class="inline-block mt-5"
+        >
+          <button
+            class="flex items-center justify-center w-full text-black p-3 rounded-lg bg-[#4A5565] text-white hover:bg-[#2D3748] cursor-pointer"
+          >
+            <i class="fa fa-eye" aria-hidden="true"></i> View Project
+          </button>
+        </a>
       </div>
     </section>
 
     <!-- Project 3 -->
-    <section class="flex justify-between items-center mt-10 pl-35 pr-43">
-      <div>
-        <!-- Text goes here -->
+    <section
+      class="flex flex-col md:flex-row justify-between items-center mt-10 p-4 md:p-8 max-w-6xl mx-auto space-y-8 md:space-y-0 md:space-x-8"
+    >
+      <!-- Text Div -->
+      <div class="w-full md:w-1/2 text-center md:text-left">
         <h3 class="text-2xl font-bold">Inspire Daily News</h3>
-        <p flex flex-col gap-[10px]>
-          <span class="block mt-4">This project showcases the latest news</span>
-          and blog updates.
+        <p class="mt-4">
+          This project showcases the latest news and blog updates.
         </p>
-
-        <!-- Button goes here -->
-        <div>
-          <a href="https://bernard-adjetey-inspire-daily.netlify.app/">
-            <button
-              class="p-[10px_25px] rounded-[10px] bg-[#FDC435] flex items-center justify-center gap-x-2 mt-5 hover:bg-yellow-400 cursor-pointer"
-            >
-              <i class="fa fa-eye" aria-hidden="true"></i> View Project
-            </button>
-          </a>
-        </div>
+        <a
+          href="https://bernard-adjetey-inspire-daily.netlify.app"
+          class="inline-block mt-5"
+        >
+          <button
+            class="flex items-center justify-center gap-x-2 w-full text-black p-3 rounded-lg bg-[#4A5565] text-white hover:bg-[#2D3748] cursor-pointer"
+          >
+            <i class="fa fa-eye" aria-hidden="true"></i> View Project
+          </button>
+        </a>
       </div>
-
-      <!-- Image goes here -->
-      <div><img src="./images/project-3.png" /></div>
+      <!-- Image Div -->
+      <div class="w-full md:w-1/2 flex justify-center">
+        <img
+          class="w-full max-w-xs md:max-w-full rounded-lg"
+          src="./images/project-3.png"
+          alt="Inspire Daily News"
+        />
+      </div>
     </section>
     <h2
       id="skills"
-      class="text-4xl md:text-5xl font-bold text-center pt-50 pb-10"
+      class="text-4xl md:text-5xl font-bold text-center pt-12 pb-10"
     >
       SKILLS
     </h2>
@@ -194,28 +264,18 @@
         <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
           <h2 class="text-xl font-bold text-center">Web Development</h2>
           <p class="mt-4 text-lg">
-            Crafting exceptional web applications that blend functionality with
-            secure code and stunning design!
+            Building secure and scalable web applications with clean backend
+            logic, responsive design, and a focus on real-world functionality.
           </p>
         </div>
 
         <!-- Box 2: Technologies I Use -->
         <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
           <h2 class="text-xl font-bold text-center">Technologies I Use</h2>
-          <h3 class="mt-4 text-lg font-semibold">Markup & Styling</h3>
           <ul class="mt-4 list-disc pl-5 space-y-2">
-            <li>
-              Semantic HTML5: Building a strong foundation for accessibility and
-              SEO.
-            </li>
-            <li>
-              Modern CSS: Creating delightful layouts that respond beautifully
-              across devices.
-            </li>
-            <li>
-              Tailwind CSS: Fast-tracking UI design with utility-first styling
-              for sleek interfaces!
-            </li>
+            <li>Backend: Node.js, Express.js, MongoDB</li>
+            <li>Frontend: Semantic HTML5, Modern CSS, Tailwind CSS</li>
+            <li>Tools: Git, Postman, VS Code, Jira, Zoho Desk</li>
           </ul>
         </div>
 
@@ -223,39 +283,88 @@
         <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
           <h2 class="text-xl font-bold text-center">Programming Language</h2>
           <p class="mt-4 text-lg">
-            Vanilla JavaScript: Bringing interactivity to life with clean and
-            efficient code!
+            JavaScript (ES6+) – Writing efficient, secure, and maintainable code
+            for both frontend and backend development.
           </p>
         </div>
       </div>
     </section>
-
-    <!-- Contact goes here -->
+    <!-- Contact Section Header -->
     <h2
       id="contact"
-      class="text-4xl md:text-5xl font-bold text-center pt-50 pb-10"
+      class="text-4xl md:text-5xl font-bold text-center pt-12 pb-10 text-gray-800"
     >
       CONTACT
     </h2>
-    <section class="flex items-center justify-center mt-3">
-      <div class="w-full max-w-lg">
+
+    <!-- Contact Section Container -->
+    <section
+      class="flex flex-col md:flex-row items-center justify-center mt-3 bg-[#F3F4F6] p-8"
+    >
+      <!-- Text and Social Media Links Div -->
+      <div
+        class="w-full md:w-1/2 flex flex-col items-center md:items-start mb-8 md:mb-0 px-4"
+      >
+        <h3 class="text-3xl font-semibold text-gray-700 mb-4">Get in Touch</h3>
+        <p class="text-lg text-gray-600 mb-2">
+          I'm here to help and answer any question you might have. I look
+          forward to hearing from you.
+        </p>
+        <p class="text-lg text-gray-600 mb-4">
+          Feel free to reach out to me via the form or through my social media
+          channels.
+        </p>
+
+        <!-- Social Media Links -->
+        <div class="flex space-x-4 text-gray-600">
+          <!-- Email Link -->
+          <a href="mailto:youremail@example.com" class="hover:text-gray-800">
+            <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+          <!-- LinkedIn Link -->
+          <a
+            href="https://linkedin.com/in/bernard-adjetey"
+            target="_blank"
+            class="hover:text-gray-800"
+          >
+            <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+          </a>
+          <!-- GitHub Link -->
+          <a
+            href="https://github.com/anangben"
+            target="_blank"
+            class="hover:text-gray-800"
+          >
+            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+          <!-- Twitter Link -->
+          <a href="#" target="_blank" class="hover:text-gray-800">
+            <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Form Div -->
+      <div class="w-full md:w-1/2 max-w-lg px-4">
         <form onsubmit="event.preventDefault(); alert('Message sent!')">
+          <!-- Name Input -->
           <input
             type="text"
             id="name"
             name="name"
             placeholder="Enter your name"
-            class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none mb-4"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none mb-4"
             required
           />
 
+          <!-- Email and Phone Inputs -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 w-full">
             <input
               type="email"
               id="email"
               name="email"
               placeholder="Enter email address"
-              class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
               required
             />
             <input
@@ -263,30 +372,33 @@
               id="phone"
               name="phone"
               placeholder="Enter phone number"
-              class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
               required
             />
           </div>
 
+          <!-- Subject Input -->
           <input
             type="text"
             id="subject"
             name="subject"
             placeholder="Enter subject"
-            class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none mb-4"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none mb-4"
             required
           />
 
+          <!-- Message Textarea -->
           <textarea
             placeholder="Message"
             rows="4"
-            class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none resize-none mb-4"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none resize-none mb-4"
             required
           ></textarea>
 
+          <!-- Submit Button -->
           <button
             type="submit"
-            class="w-full text-black p-3 rounded-lg bg-[#FDC435] hover:bg-yellow-400 cursor-pointer"
+            class="w-full text-black p-3 rounded-lg bg-[#4A5565] text-white hover:bg-[#2D3748] cursor-pointer"
           >
             Send Message
           </button>
@@ -302,15 +414,21 @@
           <!-- Social Media Icons -->
           <div class="flex justify-center space-x-6 mb-4">
             <a
-              href="https://github.com/anangben/"
+              href="https://github.com/anangben"
               class="text-gray-800 transition-colors"
             >
               <i class="fa fa-github" aria-hidden="true"></i>
             </a>
-            <a href="#" class="text-gray-800 transition-colors">
+            <a
+              href="https://linkedin.com/in/bernard-adjetey"
+              class="text-gray-800 transition-colors"
+            >
               <i class="fa fa-linkedin" aria-hidden="true"></i>
             </a>
-            <a href="#" class="text-gray-800 transition-colors">
+            <a
+              href="mailto:youremail@example.com"
+              class="text-gray-800 transition-colors"
+            >
               <i class="fa fa-envelope" aria-hidden="true"></i>
             </a>
           </div>
