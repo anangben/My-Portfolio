@@ -162,17 +162,40 @@
     <section
       class="flex flex-col md:flex-row justify-between items-center mt-10 p-4 md:p-8 max-w-6xl mx-auto space-y-8 md:space-y-0 md:space-x-8"
     >
-      <!-- Text Div -->
-      <div class="w-full md:w-1/2 text-center md:text-left">
-        <h3 class="text-2xl font-bold">To-do App</h3>
-        <p class="mt-4">
-          This project allows users to add, delete, and manage tasks promoting
-          better organization and productivity.
+      <!-- Image Div - appears first on mobile, second on md+ -->
+      <div
+        class="order-1 md:order-2 md:w-1/2 flex justify-center flex-col items-center"
+      >
+        <img
+          class="max-w-sm md:max-w-md rounded-lg mb-4"
+          src="./images/smart-meals.png"
+          alt="Smart-meals"
+        />
+        <img
+          class="w-full max-w-sm md:max-w-md rounded-lg"
+          src="./images/smart-meals1.png"
+          alt="Smart-meals"
+        />
+      </div>
+
+      <!-- Text Div - appears second on mobile, first on md+ -->
+      <div class="order-2 md:order-1 w-full md:w-1/2 text-center md:text-left">
+        <h3 class="text-2xl font-bold">SmartMeals</h3>
+        <p class="mt-5">
+          <strong>Built With:</strong> Node.js, Express, MongoDB<br /><br />
+
+          <strong>What It Is:</strong> A secure and scalable web application
+          that allows users to order pre-portioned meal kits for convenient home
+          cooking. It includes backend features such as user authentication,
+          cart management, order processing, and dynamic pricing based on
+          delivery regions.<br /><br />
+
+          -> User authentication with sign-up, login, and password reset.<br />
+          -> Fetch meal kits and manage cart items (add, update, remove).<br />
+          -> Order checkout with delivery address and payment.<br />
         </p>
-        <a
-          href="https://bernard-adjetey-todoapp.netlify.app/"
-          class="inline-block mt-5"
-        >
+
+        <a href="https://smartmealz.netlify.app/" class="inline-block mt-5">
           <button
             class="flex items-center justify-center gap-x-2 w-full text-black p-3 rounded-lg bg-[#4A5565] text-white hover:bg-[#2D3748] cursor-pointer"
           >
@@ -180,78 +203,8 @@
           </button>
         </a>
       </div>
-      <!-- Image Div -->
-      <div class="w-full md:w-1/2 flex justify-center">
-        <img
-          class="w-full max-w-xs md:max-w-full rounded-lg"
-          src="./images/project-1-update.png"
-          alt="To-do App"
-        />
-      </div>
     </section>
 
-    <!-- Project 2 -->
-    <section
-      class="flex flex-col md:flex-row justify-between items-center mt-10 p-4 md:p-8 max-w-6xl mx-auto space-y-8 md:space-y-0 md:space-x-8"
-    >
-      <!-- Image Div -->
-      <div class="w-full md:w-1/2 flex justify-center">
-        <img
-          class="w-full max-w-xs md:max-w-full rounded-lg"
-          src="./images/project-2-update.png"
-          alt="Drink Shop"
-        />
-      </div>
-      <!-- Text Div -->
-      <div class="w-full md:w-1/2 text-center md:text-left">
-        <h3 class="text-2xl font-bold">Drink Shop</h3>
-        <p class="mt-4">
-          This project allows users to browse, order, and manage their favorite
-          beverages.
-        </p>
-        <a
-          href="https://bernard-adjetey-drink-shop.netlify.app"
-          class="inline-block mt-5"
-        >
-          <button
-            class="flex items-center justify-center w-full text-black p-3 rounded-lg bg-[#4A5565] text-white hover:bg-[#2D3748] cursor-pointer"
-          >
-            <i class="fa fa-eye" aria-hidden="true"></i> View Project
-          </button>
-        </a>
-      </div>
-    </section>
-
-    <!-- Project 3 -->
-    <section
-      class="flex flex-col md:flex-row justify-between items-center mt-10 p-4 md:p-8 max-w-6xl mx-auto space-y-8 md:space-y-0 md:space-x-8"
-    >
-      <!-- Text Div -->
-      <div class="w-full md:w-1/2 text-center md:text-left">
-        <h3 class="text-2xl font-bold">Inspire Daily News</h3>
-        <p class="mt-4">
-          This project showcases the latest news and blog updates.
-        </p>
-        <a
-          href="https://bernard-adjetey-inspire-daily.netlify.app"
-          class="inline-block mt-5"
-        >
-          <button
-            class="flex items-center justify-center gap-x-2 w-full text-black p-3 rounded-lg bg-[#4A5565] text-white hover:bg-[#2D3748] cursor-pointer"
-          >
-            <i class="fa fa-eye" aria-hidden="true"></i> View Project
-          </button>
-        </a>
-      </div>
-      <!-- Image Div -->
-      <div class="w-full md:w-1/2 flex justify-center">
-        <img
-          class="w-full max-w-xs md:max-w-full rounded-lg"
-          src="./images/project-3.png"
-          alt="Inspire Daily News"
-        />
-      </div>
-    </section>
     <h2
       id="skills"
       class="text-4xl md:text-5xl font-bold text-center pt-12 pb-10"
